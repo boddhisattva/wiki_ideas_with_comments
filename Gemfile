@@ -46,7 +46,12 @@ gem 'charlock_holmes_bundle_icu', '~> 0.6.9.2'
 
 gem 'devise'
 
+gem 'thin'
+
+gem 'shelly-dependencies'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+      
 end
