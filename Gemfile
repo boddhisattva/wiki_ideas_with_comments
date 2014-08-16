@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 gem 'gollum'
 gem 'redcarpet', '~> 3.1.2'
 
+gem 'charlock_holmes_bundle_icu', '~> 0.6.9.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
