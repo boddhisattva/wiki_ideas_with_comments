@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: t1_development
+  database: wiki_development
   pool: 5
   username: root
   password: password-1
@@ -25,7 +25,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: t1_test
+  database: wiki_test
   pool: 5
   username: root
   password: password-1
@@ -35,7 +35,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: t1_production
+  database: wiki_production
   pool: 5
   username: root
   password: password-1
