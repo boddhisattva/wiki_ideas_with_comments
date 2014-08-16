@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
-  </div>
+  
+    
+  <%= f.hidden_field :user_name, :value => current_user.name %>
+  
   <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
