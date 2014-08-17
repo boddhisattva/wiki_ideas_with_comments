@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  enum role: [:admin]
 
   validates :name, presence: true, uniqueness: true
 

@@ -5,9 +5,11 @@
     <h1 class = "underline"></b><%= @idea.name %></p></h1>
     <p><%= markdown(@idea.raw_content) %></p>
     <p>
-      <%= link_to 'Edit', edit_idea_path(@idea) %> |
-      <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
       <%= link_to 'Back', ideas_path %> |
+      <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |      
+      <% end %>
       <%= "Last edited by #{@idea.author} #{time_ago_in_words(@idea.last_modified_date)} ago." %>
     </p>
   </div>
