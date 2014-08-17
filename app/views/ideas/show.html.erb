@@ -7,10 +7,13 @@
     <p>
       <%= link_to 'Edit', edit_idea_path(@idea) %> |
       <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
-      <%= link_to 'Back', ideas_path %>
+      <%= link_to 'Back', ideas_path %> |
+      <%= "Last edited by #{@idea.author} #{time_ago_in_words(@idea.last_modified_date)} ago." %>
     </p>
   </div>
 </div>
+
+
 
  <div id="disqus_thread"></div>
     <script type="text/javascript">
