@@ -3,8 +3,6 @@ require 'rubygems'
 require 'gollum/app'
 Rails.application.routes.draw do
   # devise_for :users
-  resources :comments
-
   resources :ideas
 
   root to: 'ideas#index'
