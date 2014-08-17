@@ -22,6 +22,10 @@ class Idea < ActiveRecord::Base
     page.formatted_data
   end
 
+  def raw_content
+    page.raw_data
+  end
+
   private
  
   def wiki

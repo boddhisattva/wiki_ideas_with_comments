@@ -1,16 +1,16 @@
-<p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= raw(@idea.content) %>  
-</p>
-
-<small>
-  <%= "Last edited by #{@idea.author} #{time_ago_in_words(@idea.last_modified_date)} ago." %>
-</small>
+<div class="row">
+  <div class="span3">
+    <h1 class = "underline"></b><%= @idea.name %></p></h1>
+    <p><%= markdown(@idea.raw_content) %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
+      <%= link_to 'Back', ideas_path %>
+    </p>
+  </div>
+</div>
 
  <div id="disqus_thread"></div>
     <script type="text/javascript">
