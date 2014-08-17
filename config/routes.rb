@@ -1,18 +1,18 @@
 require 'rubygems'
 require 'gollum/app'
 Rails.application.routes.draw do
-  # devise_for :users
   resources :ideas
 
   root to: 'ideas#index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  gollum_path = Rails.root.join("db", "wiki.git").to_s 
-  Precious::App.set(:gollum_path, gollum_path)
-  Precious::App.set(:default_markup, :markdown) # set your favorite markup language
-  Precious::App.set(:wiki_options, {:universal_toc => false})
-  mount Precious::App, at: 'wiki'
+  # helpful to see things via the gollum web interface
+  # gollum_path = Rails.root.join("db", "wiki.git").to_s 
+  # Precious::App.set(:gollum_path, gollum_path)
+  # Precious::App.set(:default_markup, :markdown) # set your favorite markup language
+  # Precious::App.set(:wiki_options, {:universal_toc => false})
+  # mount Precious::App, at: 'wiki'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
