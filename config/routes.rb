@@ -1,4 +1,3 @@
-# require 'gollum/frontend/app'
 require 'rubygems'
 require 'gollum/app'
 Rails.application.routes.draw do
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   # mount Precious::App, at: 'wiki'
 
 
-  gollum_path = Rails.root.join("db", "wiki.git").to_s #
+  gollum_path = Rails.root.join("db", "wiki.git").to_s 
   Precious::App.set(:gollum_path, gollum_path)
   Precious::App.set(:default_markup, :markdown) # set your favorite markup language
   Precious::App.set(:wiki_options, {:universal_toc => false})
