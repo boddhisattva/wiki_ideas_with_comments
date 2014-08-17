@@ -5,8 +5,12 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @idea.description %>
+  <%= raw(@idea.content) %>  
 </p>
+
+<small>
+  <%= "Last edited by #{@idea.author} #{time_ago_in_words(@idea.last_modified_date)} ago." %>
+</small>
 
  <div id="disqus_thread"></div>
     <script type="text/javascript">
