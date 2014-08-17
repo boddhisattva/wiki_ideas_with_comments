@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>WikiIdeaWithComments</title>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
+  
+ 
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -26,10 +28,13 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/ideas">Ideas</a></li>
+        <% if user_signed_in? && current_user.admin? %>
+          <li ><%= link_to 'New Idea', new_idea_path %></li>
+        <% end %>
       </ul>
       <p class="navbar-text pull-right">
       <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
+      Logged in as <strong><%= current_user.name %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
       <% else %>
@@ -53,7 +58,7 @@
 
 <footer>
   <div class="container">
-    A sample wiki app
+    A sample wiki app powered with disqus comments
   </div>
 </footer>
 <script src="//railsgirls.com/assets/bootstrap.js"></script>

@@ -1,6 +1,5 @@
 require 'gollum-lib'
 class Idea < ActiveRecord::Base
-  has_many :comments
   belongs_to :user
 
   FORMAT = :markdown
@@ -10,6 +9,23 @@ class Idea < ActiveRecord::Base
   after_update  :update_page
   after_destroy :delete_page
 
+
+  def author
+    page.version.author.name.gsub(/<>/, '')
+  end
+
+  def last_modified_date
+    page.version.authored_date
+  end
+
+  def content
+    page.formatted_data
+  end
+
+  def raw_content
+    page.raw_data
+  end
+
   private
  
   def wiki
@@ -18,11 +34,7 @@ class Idea < ActiveRecord::Base
  
   def page
     wiki.page(self.name)
-  end
-
-  def raw_content
-    page.raw_data
-  end
+  end  
  
   def create_page
     wiki.write_page(self.name, FORMAT, self.description || '' , commit_message)
