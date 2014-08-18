@@ -4,6 +4,6 @@ Steps to get up and running -
 
 1. git init --bare db/wiki.git - used for gollum
 
-2. bundle install ; rake db:create ; rake db:migrate ; rails s
+2. bundle install ; rake db:create ; rake db:migrate ; rake db:seed; rails s
 
 
