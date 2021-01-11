@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'gollum'
-gem 'redcarpet', '~> 3.1.2'
+gem 'redcarpet', '~> 3.5.1'
 
 gem 'charlock_holmes_bundle_icu', '~> 0.6.9.2'
 # Use ActiveModel has_secure_password
